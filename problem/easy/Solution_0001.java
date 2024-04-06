@@ -1,4 +1,4 @@
-package problem;
+package problem.easy;
 
 /**
 1. Two Sum
