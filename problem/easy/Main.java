@@ -7,18 +7,11 @@ public class Main {
 		// TODO Auto-generated method stub
 		
 		
-		Solution_0021 answer = new Solution_0021();
+		Solution_0026 answer = new Solution_0026();
 		
-		ListNode list1 = new ListNode(1, new ListNode(2, new ListNode(4)));
+		int[] input = {1, 1, 2, 2, 4, 5, 6, 6};
 		
-		ListNode list2 = new ListNode(1, new ListNode(3, new ListNode(4)));
-		
-		ListNode answerList = answer.mergeTwoLists(list1, list2);
-		
-		while(answerList != null) {
-			System.out.println(answerList.val);
-			answerList = answerList.next;
-		}
+		System.out.println(answer.removeDuplicates(input));
 		
 	}
 
