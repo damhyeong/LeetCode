@@ -49,5 +49,35 @@ digits does not contain any leading 0's.
  */
 
 public class Solution_0066 {
+public int[] plusOne(int[] digits) {
+        
+        // preparing all number is 999...
+        int[] newDigits = new int[digits.length + 1]; 
 
+        boolean isPlus = true; // we add 1 at first(last) element
+        for(int i = digits.length - 1; i >= 0; i--){
+            int digit = digits[i]; // extract one number in array.
+            
+            digit = isPlus ? digit + 1 : digit;
+
+            // if after plus one, digit being zero, it means ten. so, isPlus must be true.
+            if(digit == 10 && isPlus){
+                digit = 0;
+                isPlus = true;
+            } else {
+                isPlus = false;
+            }
+            newDigits[i + 1] = digit;
+            digits[i] = digit;
+        }
+        
+        // if isPlus still True --> it means all of number is 999...
+        if(isPlus){
+            newDigits[0] = 1;
+            // newDigits[else] = 0;
+            return newDigits;
+        } else {
+            return digits;
+        }
+    }
 }
