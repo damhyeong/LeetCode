@@ -7,11 +7,16 @@ public class Main {
 		// TODO Auto-generated method stub
 		
 		
-		Solution_0026 answer = new Solution_0026();
+		Solution_0083 answer = new Solution_0083();
 		
-		int[] input = {1, 1, 2, 2, 4, 5, 6, 6};
+		ListNode inputNode = new ListNode(1, new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(3)))));
 		
-		System.out.println(answer.removeDuplicates(input));
+		ListNode result = answer.deleteDuplicates(inputNode);
+		
+		while(result != null) {
+			System.out.println(result.val);
+			result = result.next;
+		}
 		
 	}
 
