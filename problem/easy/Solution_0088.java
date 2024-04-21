@@ -59,7 +59,29 @@ Follow up: Can you come up with an algorithm that runs in O(m + n) time?
  */
 
 public class Solution_0088 {
-	public void merge(int[] nums1, int m, int[] num2, int n) {
-		
-	}
+	public void merge(int[] nums1, int m, int[] nums2, int n) {
+        int[] result = new int[m + n];
+        int index = 0;
+        int i = 0, j = 0;
+
+        while(i < m && j < n){
+            if(nums1[i] <= nums2[j])
+                result[index++] = nums1[i++];
+            else
+                result[index++] = nums2[j++];
+        }
+
+        if(i != m){
+            while(i < m){
+                result[index++] = nums1[i++];
+            }
+        } else if(j != n){
+            while(j < n){
+                result[index++] = nums2[j++];
+            }
+        }
+        for(int idx = 0; idx < nums1.length; idx++)
+            nums1[idx] = result[idx];
+
+    }
 }
