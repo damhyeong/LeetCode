@@ -1,5 +1,7 @@
 package problem.easy;
 
+import java.util.*;
+
 /**
 94. Binary Tree Inorder Traversal
 
@@ -41,5 +43,23 @@ Follow up: Recursive solution is trivial, could you do it iteratively?
  */
 
 public class Solution_0094 {
+	public List<Integer> inorderTraversal(TreeNode root) {
+        List<Integer> list = new ArrayList<>();
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode currNode = root;
 
+        while(!stack.isEmpty() || currNode != null){
+            while(currNode != null){
+                stack.add(currNode);
+                currNode = currNode.left;
+            }
+
+            currNode = stack.pop();
+            list.add(currNode.val);
+
+            currNode = currNode.right;
+        }
+
+        return list;
+    }
 }
